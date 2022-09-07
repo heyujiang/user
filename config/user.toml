@@ -1,0 +1,28 @@
+# 数据库设置
+[DataBase]
+debug=false
+# mysql or
+type="mysql"
+# mysql conf
+[DataBase.MySql]
+# version
+version="5.7.7"
+# user_name
+user_name="root"
+# pass_word
+pass_word="HelloKl.1418-41"
+# address
+address="127.0.0.1"
+# port
+port="3306"
+# data_base
+data_base="shop"
+
+# redis设置
+[Redis]
+# url
+url="127.0.0.1:6731"
+# pass_word
+pass_word=""
+# db
+db=1
