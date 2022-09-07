@@ -1,6 +1,8 @@
 package biz
 
 import (
+	"context"
+	v1 "github.com/heyujiang/hapis/protogen-go/common/v1"
 	userV1 "github.com/heyujiang/hapis/protogen-go/user/v1"
 	"github.com/heyujiang/user/config"
 	"google.golang.org/grpc"
@@ -30,4 +32,12 @@ func StartUserBiz(conf config.UserBiz) {
 	if err := grpcSer.Serve(listener); err != nil {
 		panic(err)
 	}
+}
+
+func (u *UserBiz) Login(ctx context.Context, req *userV1.UserLoginReq) (*v1.Result, error) {
+	return &v1.Result{}, nil
+}
+
+func (u *UserBiz) GetUserInfo(ctx context.Context, req *userV1.GetUserInfoReq) (*userV1.GetUserInfoResp, error) {
+	return &userV1.GetUserInfoResp{}, nil
 }
