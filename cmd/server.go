@@ -3,6 +3,10 @@ package cmd
 import (
 	"fmt"
 	"github.com/heyujiang/user/config"
+	"github.com/heyujiang/user/server/biz"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/spf13/cobra"
 )
@@ -31,4 +35,10 @@ func init() {
 
 func runServer(cmd *cobra.Command, args []string) {
 	fmt.Println(config.GetConfig())
+
+	biz.StartUserBiz(config.GetConfig().UserBiz)
+
+	sig := make(chan os.Signal, 2)
+	signal.Notify(sig, syscall.SIGTERM, syscall.SIGINT)
+	<-sig
 }

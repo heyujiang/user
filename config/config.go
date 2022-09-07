@@ -17,6 +17,7 @@ var (
 type Config struct {
 	DataBase DataBase `toml:"DataBase"`
 	Redis    Redis    `toml:"Redis"`
+	UserBiz  UserBiz  `toml:"UserBiz"`
 }
 
 type DataBase struct {
@@ -38,6 +39,10 @@ type Redis struct {
 	Url      string `toml:"url"`
 	PassWord string `toml:"pass_word"`
 	Db       int    `toml:"db"`
+}
+
+type UserBiz struct {
+	Url string `toml:"url"`
 }
 
 func init() {
