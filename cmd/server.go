@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/heyujiang/user/config"
 	"github.com/heyujiang/user/server/biz"
+	"github.com/heyujiang/user/service"
 	"os"
 	"os/signal"
 	"syscall"
@@ -34,7 +34,7 @@ func init() {
 }
 
 func runServer(cmd *cobra.Command, args []string) {
-	fmt.Println(config.GetConfig())
+	service.Register(config.GetConfig().RegisterCenter)
 
 	biz.StartUserBiz(config.GetConfig().UserBiz)
 

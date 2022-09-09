@@ -29,3 +29,8 @@ db=1
 
 [UserBiz]
 url="127.0.0.1:40001"
+
+[RegisterCenter]
+type="consul"
+[RegisterCenter.Consul]
+address="127.0.0.1:8500"

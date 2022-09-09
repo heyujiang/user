@@ -15,9 +15,10 @@ var (
 )
 
 type Config struct {
-	DataBase DataBase `toml:"DataBase"`
-	Redis    Redis    `toml:"Redis"`
-	UserBiz  UserBiz  `toml:"UserBiz"`
+	DataBase       DataBase       `toml:"DataBase"`
+	Redis          Redis          `toml:"Redis"`
+	UserBiz        UserBiz        `toml:"UserBiz"`
+	RegisterCenter RegisterCenter `toml:"RegisterCenter"`
 }
 
 type DataBase struct {
@@ -44,6 +45,17 @@ type Redis struct {
 type UserBiz struct {
 	Url string `toml:"url"`
 }
+
+type (
+	RegisterCenter struct {
+		Type   string `toml:"type"`
+		Consul Consul `toml:"Consul"`
+	}
+
+	Consul struct {
+		Address string `toml:"address"`
+	}
+)
 
 func init() {
 	confValue = &atomic.Value{}
