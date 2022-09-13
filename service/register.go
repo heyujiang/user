@@ -21,10 +21,10 @@ func registerConsul(conf config.Consul) {
 	}
 
 	registration := &consulApi.AgentServiceRegistration{
-		ID:      "100",
-		Name:    "UserServer100",
+		ID:      "1",
+		Name:    "UserServer",
 		Tags:    nil,
-		Port:    81,
+		Port:    40001,
 		Address: "127.0.0.1",
 		//Check: &consulApi.AgentServiceCheck{
 		//	Interval:                       "5s",

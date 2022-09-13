@@ -35,7 +35,7 @@ func StartUserBiz(conf config.UserBiz) {
 }
 
 func (u *UserBiz) Login(ctx context.Context, req *userV1.UserLoginReq) (*v1.Result, error) {
-	return &v1.Result{}, nil
+	return &v1.Result{Code: v1.StatusCode_Success, Msg: "Login success"}, nil
 }
 
 func (u *UserBiz) GetUserInfo(ctx context.Context, req *userV1.GetUserInfoReq) (*userV1.GetUserInfoResp, error) {
